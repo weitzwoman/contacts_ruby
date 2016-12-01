@@ -1,6 +1,7 @@
+<ul>
 <% @contact.phones.each do |phone| %>
-
-<%= phone.type() %>
-<%= phone.area_code() %>
-<%= phone.number() %>
+<li><%= phone.type() %>: (<%= phone.area_code() %>) <%= phone.number() %></li>
 <% end %>
+</ul>
+
+<a href="/contact_list/<%= @contact.id() %>">Return to <%= @contact.first%> <%= @contact.last%></a>
