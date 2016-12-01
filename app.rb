@@ -48,3 +48,37 @@ get('/contact_list/:id/phone_details') do
   @contact = Contact.find(params.fetch('id').to_i)
   erb(:phone_details)
 end
+
+get('/contact_list/:id/email_form') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:email_form)
+end
+
+post('/new_email') do
+  @contact = Contact.find(params.fetch('email_id').to_i)
+  @new_email = Email.new({:type => params.fetch("type"), :address => params.fetch("address")})
+  @contact.add_email(@new_email)
+  erb(:success_email)
+end
+
+get('/contact_list/:id/email_details') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:email_details)
+end
+
+get('/contact_list/:id/address_form') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:address_form)
+end
+
+post('/new_address') do
+  @contact = Contact.find(params.fetch('address_id').to_i)
+  @new_address = Address.new({:type => params.fetch("type"), :street => params.fetch("street"), :city => params.fetch("city"), :state => params.fetch("state"), :zip => params.fetch("zip")})
+  @contact.add_address(@new_address)
+  erb(:success_address)
+end
+
+get('/contact_list/:id/address_details') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:address_details)
+end

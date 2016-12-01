@@ -68,5 +68,29 @@ describe('takes user to target route', {:type => :feature}) do
     click_link('View Phone Details')
     expect(page).to have_content("")
   end
+  it('click add email information link to view email form') do
+    fill_in("first", :with => "Sarah")
+    click_button("Submit New Contact")
+    click_link('View contact list')
+    click_link('Sarah')
+    click_link('Add Email Information')
+    click_button('Submit New Email')
+    expect(page).to have_content("")
+    click_link('View contact information for Sarah')
+    click_link('View Email Details')
+    expect(page).to have_content("")
+  end
+  it('click add address information link to view address form') do
+    fill_in("first", :with => "Roberta")
+    click_button("Submit New Contact")
+    click_link('View contact list')
+    click_link('Roberta')
+    click_link('Add Address Information')
+    click_button('Submit New Address')
+    expect(page).to have_content("")
+    click_link('View contact information for Roberta')
+    click_link('View Address Details')
+    expect(page).to have_content("")
+  end
 
 end
