@@ -31,3 +31,8 @@ get('/contact_list/:id') do
   @contact = Contact.find(params.fetch('id').to_i)
   erb(:contact_page)
 end
+
+get('/contact_list/:id/phone_form') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:phone_form)
+end
