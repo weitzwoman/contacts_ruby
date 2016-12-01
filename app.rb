@@ -14,3 +14,10 @@ end
 get('/contact_form') do
   erb(:contact_form)
 end
+
+post('/new_contact') do
+
+  new_contact = Contact.new({:first => params.fetch("first"), :last => params.fetch("last"), :job => params.fetch("job"), :company => params.fetch("company")})
+  new_contact.save()
+  erb(:success_contact)
+end
