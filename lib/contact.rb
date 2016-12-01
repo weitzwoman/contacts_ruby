@@ -1,4 +1,4 @@
-class Contacts
+class Contact
   attr_reader(:first, :last, :job, :company)
 
   define_method(:initialize) do |attributes|
