@@ -1,7 +1,9 @@
 <h2>New Contact Phone Information</h2>
 
-<form action="new_phone" method="post">
+<form action='/new_phone' method="post">
   <div class="form-group">
+    <input id="phone_id" name="phone_id" type="hidden" value="<%= @contact.id() %>">
+
     <label for="type">Type of Phone Number</label>
     <input type="text" name="type" id="type" class="form-control">
 

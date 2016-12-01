@@ -45,6 +45,15 @@ describe('takes user to target route', {:type => :feature}) do
     click_link('View contact list')
     click_link('')
     click_link('Add Phone Information')
-    # click_button('Submit New Phone')
+    expect(page).to have_content("New Contact Phone Information")
+  end
+  it('click add phone information link to view phone form') do
+    fill_in("first", :with => "Mark")
+    click_button("Submit New Contact")
+    click_link('View contact list')
+    click_link('Mark')
+    click_link('Add Phone Information')
+    click_button('Submit New Phone')
+    expect(page).to have_content("")
   end
 end
