@@ -1,1 +1,9 @@
 <h2>Contact List</h2>
+
+<ul>
+<% @contacts.each do |contact| %>
+<li><a href="contact_list/<%= contact.id()%>"><%= contact.first() %> <%= contact.last() %></a></li>
+<% end %>
+</ul>
+
+<a href="/contact_form">Create new contact</a>

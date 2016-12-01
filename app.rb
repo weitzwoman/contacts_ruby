@@ -18,9 +18,16 @@ end
 post('/new_contact') do
   new_contact = Contact.new({:first => params.fetch("first"), :last => params.fetch("last"), :job => params.fetch("job"), :company => params.fetch("company")})
   new_contact.save()
+  @contacts = Contact.all()
   erb(:success_contact)
 end
 
 get('/contact_list') do
+  @contacts = Contact.all()
   erb(:contact_list)
+end
+
+get('/contact_list/:id') do
+  @contact = Contact.find(params.fetch('id').to_i)
+  erb(:contact_page)
 end
