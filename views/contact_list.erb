@@ -1,9 +1,20 @@
-<h2>Contact List</h2>
 
-<ul>
-<% @contacts.each do |contact| %>
-<li><a href="contact_list/<%= contact.id()%>"><%= contact.first() %> <%= contact.last() %></a></li>
-<% end %>
-</ul>
+<div class="panel panel-primary">
+  <div class="panel panel-heading">
+    <h2>Contact List</h2>
+  </div>
+  <ul>
+  <% @contacts.each do |contact| %>
+  <div class="panel panel-body">
+    <li><span class="link_font"><a href="contact_list/<%= contact.id()%>">  <%= contact.first() %> <%= contact.last() %></a></span></li>
+  </div>
+  <% end %>
+  </ul>
+</div>
 
-<a href="/contact_form">Create new contact</a>
+
+
+
+
+
+<a href="/contact_form" class="link_font">Create new contact</a>

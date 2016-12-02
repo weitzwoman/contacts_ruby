@@ -1,18 +1,38 @@
-<h2> Contact details for <%= @contact.first() %> <%= @contact.last() %></h2>
+<div class="panel panel-primary">
+  <div class="link_font panel-heading"><center>Contact details for <%= @contact.first() %> <%= @contact.last() %></center></div>
+</div>
 
-<h3>Job: <%= @contact.job %></h3>
-<h3>Company: <%= @contact.company %></h3>
+<div class="panel panel-default">
+  <div class="link_font panel-heading">Company: <%= @contact.company %></div>
+  <div class="link_font panel-body">Job: <%= @contact.job %></div>
+</div>
 
-<a href='/contact_list/<%= @contact.id() %>/phone_details'>View Phone Details</a>
 <br>
-<a href='/contact_list/<%= @contact.id() %>/phone_form'>Add Phone Information</a>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <img src="../img/phone.png" alt="phone" class="img_resize">
+    <br>
+    <a href='/contact_list/<%= @contact.id() %>/phone_details'>View Phone Details</a>
+    <br>
+    <a href='/contact_list/<%= @contact.id() %>/phone_form'>Add Phone Information</a>
+  </div>
+  <div class="col-md-4">
+    <img src="../img/email.png" alt="email" class="img_resize">
+    <br>
+    <a href='/contact_list/<%= @contact.id() %>/email_details'>View Email Details</a>
+    <br>
+    <a href='/contact_list/<%= @contact.id() %>/email_form'>Add Email Information</a>
+  </div>
+  <div class="col-md-4">
+    <img src="../img/house.png" alt="house" class="img_resize">
+    <br>
+    <a href='/contact_list/<%= @contact.id() %>/address_details'>View Address Details</a>
+    <br>
+    <a href='/contact_list/<%= @contact.id() %>/address_form'>Add Address Information</a>
+  </div>
+</div>
 <br>
-<a href='/contact_list/<%= @contact.id() %>/email_details'>View Email Details</a>
-<br>
-<a href='/contact_list/<%= @contact.id() %>/email_form'>Add Email Information</a>
-<br>
-<a href='/contact_list/<%= @contact.id() %>/address_details'>View Address Details</a>
-<br>
-<a href='/contact_list/<%= @contact.id() %>/address_form'>Add Address Information</a>
-<br>
-<a href="/contact_list">Back to contact list</a>
+
+<span class="link_font"><a href="/contact_list">Back to contact list</a></span>
