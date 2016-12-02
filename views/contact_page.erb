@@ -14,6 +14,10 @@
   <div class="col-md-4">
     <img src="../img/phone.png" alt="phone" class="img_resize">
     <br>
+    <% @contact.phones.each do |phone| %>
+    <%= phone.type() %>: (<%= phone.area_code() %>) <%= phone.number() %>
+    <br>
+    <% end %>
     <a href='/contact_list/<%= @contact.id() %>/phone_details'>View Phone Details</a>
     <br>
     <a href='/contact_list/<%= @contact.id() %>/phone_form'>Add Phone Information</a>
